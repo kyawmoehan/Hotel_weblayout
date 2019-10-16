@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Dancing+Script&display=swap');
+:root {
+    --logo-font: 'Dancing Script', cursive;
+    --main-font: 'Courgette', cursive;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 92%;
+    margin: auto;
+}
+
+
+/* header */
+
+header {
+    font-family: var(--main-font);
+    margin: 2rem 0;
+}
+
+header .container {
+    display: grid;
+    grid-template-columns: 0.8fr 600px 0.8fr;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.3rem;
+}
+
+header nav {
+    justify-self: center;
+}
+
+nav ul {
+    display: flex;
+    box-sizing: border-box;
+}
+
+nav a {
+    padding: 0.8rem;
+}
+
+header .container a:hover {
+    color: rgb(121, 120, 120);
+}
+
+header p {
+    justify-self: end;
+}
+
+header .container i {
+    display: none;
+}
+
+
+/* cover image */
+
+.cover-image {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 5rem;
+}
+
+.cover-image .container {
+    width: 100%;
+    height: 100%;
+    background: url("https://i.ibb.co/QfHWszh/test-2.jpg") no-repeat center center /cover;
+}
+
+
+/* showcase */
+
+.show-case .showcase {
+    width: 80%;
+    margin: auto;
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.showcase-info p {
+    font-size: 1.2rem;
+    font-family: var(--main-font);
+}
+
+.showcase-info h2 {
+    letter-spacing: 5px;
+}
+
+.showcase-info a:hover {
+    border-bottom: 2px solid;
+}
+
+.showcase:nth-child(odd) .showcase-info {
+    justify-self: end;
+    padding-right: 3rem;
+}
+
+.showcase:nth-child(odd) img {
+    padding-left: 3rem;
+}
+
+.showcase:nth-child(even) .showcase-info {
+    justify-self: start;
+    padding-left: 3rem;
+}
+
+.showcase:nth-child(even) img {
+    justify-self: end;
+    padding-right: 3rem;
+}
+
+
+/* footer */
+
+footer,
+footer a {
+    color: rgb(70, 68, 68);
+}
+
+footer a:hover {
+    border-bottom: 1px solid;
+}
+
+footer .container {
+    line-height: 1;
+    width: 100%;
+    height: 40vh;
+    margin: auto;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: center;
+}
+
+footer .container p:first-child {
+    font-weight: bold;
+}
+
+
+/* small screen */
+
+@media (max-width: 700px) {
+    /* header */
+    header {
+        margin: 0.5rem 0;
+        position: sticky;
+        top: 0;
+    }
+    header .container {
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #fff;
+    }
+    header nav,
+    header p {
+        display: none;
+    }
+    header .container i {
+        display: block;
+        justify-self: end;
+    }
+    /* cover image */
+    .cover-image {
+        margin-bottom: 0.3rem;
+    }
+    /* showcase */
+    .show-case .showcase {
+        width: 100%;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    .showcase:nth-child(odd) .showcase-info,
+    .showcase:nth-child(even) .showcase-info {
+        justify-self: start;
+        padding-right: 0;
+        padding-left: 2rem;
+    }
+    .showcase:nth-child(odd) img,
+    .showcase:nth-child(even) img {
+        width: 70%;
+        justify-self: center;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .showcase:nth-child(even) .showcase-info {
+        order: 1;
+    }
+    .showcase:nth-child(even) img {
+        order: 2;
+    }
+    /* footer */
+    footer .container {
+        height: 70vh;
+        grid-template-columns: 1fr;
+        align-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .showcase:nth-child(odd) img,
+    .showcase:nth-child(even) img {
+        width: 100%;
+    }
+}
